@@ -18,3 +18,20 @@ describe('shell (HR-013)', () => {
     expect(screen.getByRole('button', { name: /Carga/ })).toHaveAttribute('aria-current', 'page')
   })
 })
+
+describe('shell home (HR-015)', () => {
+  it('opens_on_the_landing_with_no_tab_highlighted', () => {
+    const { container } = render(<App />)
+    expect(container.querySelector('[data-feature="landing"]')).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: /Carga/ })).not.toHaveAttribute('aria-current')
+  })
+
+  it('leaves_the_landing_on_a_huella_tab_event_and_returns_with_the_brand', () => {
+    const { container } = render(<App />)
+    act(() => void window.dispatchEvent(new CustomEvent('huella:tab', { detail: 'carga' })))
+    expect(container.querySelector('[data-feature="landing"]')).not.toBeInTheDocument()
+    expect(screen.getByRole('button', { name: /Carga/ })).toHaveAttribute('aria-current', 'page')
+    act(() => screen.getByRole('link', { name: /inicio/ }).click())
+    expect(container.querySelector('[data-feature="landing"]')).toBeInTheDocument()
+  })
+})
