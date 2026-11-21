@@ -1,0 +1,11 @@
+# cris-4
+Agent: cris-4
+Started: 1795286220
+Events: 1
+Events-Since-Checkpoint: 1
+Checkpoints: 0
+Sessions: 1
+Last-Checkpoint: 0
+Human: crisMmolina
+Last-Session: cris-4-1795286219
+Updated: 1795286220
