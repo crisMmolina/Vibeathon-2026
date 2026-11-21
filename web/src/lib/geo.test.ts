@@ -21,3 +21,16 @@ describe('geo.aggregateByState (IDEA.md §4 step 2)', () => {
     expect(aggregateByState(records, persons).find((s) => s.cve_ent === '14')!.personas).toBe(2)
   })
 })
+
+describe('states geometry (web/public/geo/estados.geojson)', () => {
+  it('states_geojson_has_32_states_with_cve_ent', async () => {
+    const { readFileSync, statSync } = await import('node:fs')
+    const { resolve } = await import('node:path')
+    const path = resolve(process.cwd(), 'public/geo/estados.geojson')
+    const gj = JSON.parse(readFileSync(path, 'utf8'))
+    const codes = new Set(gj.features.map((f: { properties: { cve_ent: string } }) => f.properties.cve_ent))
+    expect(codes.size).toBe(32)
+    expect(codes.has('14')).toBe(true)
+    expect(statSync(path).size).toBeLessThan(500_000)
+  })
+})
