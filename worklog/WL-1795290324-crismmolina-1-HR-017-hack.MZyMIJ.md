@@ -11,3 +11,4 @@
 ## History
 - 1795290324 | CLAIMED | crismmolina-1 | claim; next: Write its tests, see them fail (uak red HR-017), then implement until this passes: `npm --prefix web test -- --run src/features/map && npm --prefix web run build` | Harness: unknown | Model: unknown
 - 1795290378 | REVIEW | crismmolina-1 | done; PR https://github.com/crisMmolina/Vibeathon-2026/pull/15; evidence: npm --prefix web test -- --run src/features/map && npm --prefix web run build exit 0 (3/3, new test clicking_an_alliance_point_opens_its_card) · red at 1bf2cbf: AssertionError: expected [] to deeply equal [ 'tab:alianzas' ]; reviewer: - | Harness: unknown | Model: unknown
+- 1795290489 | REVIEW | cris-2 | review; approve; SHA c5f1e4604fc98424fe86250f6908716522e9affc; reviewer cris-2 | Harness: claude-code | Model: unknown
