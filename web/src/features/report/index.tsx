@@ -3,9 +3,22 @@ import { useEffect, useMemo, useState } from 'react'
 import type { DemoTruth } from '../../schemas/index.ts'
 import { Button, Chip, EmptyState, PageHeader, PageLayout, Plate, Row, SectionHeader, SimBadge, Stat, Light } from '../../lib/ui/index.tsx'
 import { candidates } from '../../lib/match.ts'
-import { build, exportCsv, exportPdf, labelFor, valorText } from '../../lib/report.ts'
+import { persons } from '../../lib/indicators.ts'
+import { build, exportPdf, labelFor, toCsv, valorText } from '../../lib/report.ts'
+import { chartsCsv, suggest, type ChartCtx, type ChartSpec } from '../../lib/charts.ts'
 import { useApp } from '../../store/index.ts'
 import { loadDemo } from '../map/loadDemo.ts'
+import { ReportCharts } from './Charts.tsx'
+
+/** One CSV with the indicators and the data of every chart in the report (Blob, stays on this computer). */
+function downloadCsv(text: string, filename: string) {
+  const url = URL.createObjectURL(new Blob(['﻿' + text], { type: 'text/csv;charset=utf-8' }))
+  const a = Object.assign(document.createElement('a'), { href: url, download: filename })
+  document.body.appendChild(a)
+  a.click()
+  a.remove()
+  URL.revokeObjectURL(url)
+}
 
 const fmtFecha = (iso: string) => new Date(`${iso}T12:00:00`).toLocaleDateString('es-MX', { day: 'numeric', month: 'long', year: 'numeric' })
 const pct = (x: number) => `${Math.round(x * 100)} %`
@@ -21,7 +34,8 @@ const PRINT_CSS = `
 }`
 
 export default function ReportView() {
-  const { records, pairs: storedPairs, audit, files, set } = useApp()
+  const { records, pairs: storedPairs, audit, files, alliances, mappings, set } = useApp()
+  const [picked, setPicked] = useState<ChartSpec[] | null>(null)
   const [truth, setTruth] = useState<DemoTruth | null>(null)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
@@ -35,6 +49,9 @@ export default function ReportView() {
   const pairs = useMemo(() => (storedPairs.length ? storedPairs : candidates(records)), [storedPairs, records])
   const fechaCorte = files[0]?.periodo.hasta ?? '2026-09-30'
   const report = useMemo(() => build({ records, pairs, audit, files, fecha_corte: fechaCorte, truth }), [records, pairs, audit, files, fechaCorte, truth])
+  const people = useMemo(() => persons(records, pairs), [records, pairs])
+  const ctx: ChartCtx = useMemo(() => ({ records, persons: people, alliances, files, mappings }), [records, people, alliances, files, mappings])
+  const chosen = picked ?? suggest(ctx).slice(0, 4)
 
   if (!records.length) {
     return (
@@ -68,7 +85,7 @@ export default function ReportView() {
         sub={`Corte: ${fmtFecha(report.fecha_corte)} · regla ${report.regla_version}`}
         action={
           <div className="no-print" style={{ display: 'flex', gap: 'var(--s-2)', flexWrap: 'wrap' }}>
-            <Button onClick={() => exportCsv(report)}>Descargar CSV</Button>
+            <Button onClick={() => downloadCsv(`${toCsv(report)}\n${chartsCsv(ctx, chosen)}`, `informe-eira-${report.fecha_corte}.csv`)}>Descargar CSV</Button>
             <Button variant="primary" onClick={exportPdf}>Exportar PDF</Button>
           </div>
         }
@@ -101,6 +118,14 @@ export default function ReportView() {
           </div>
         </Plate>
       </div>
+
+      <ReportCharts
+        ctx={ctx}
+        chosen={chosen}
+        setChosen={setPicked}
+        estado={personas ? labelFor(personas) : 'estimado, no oficial'}
+        fuente={`${report.archivos.map((f) => f.nombre).join(', ')} · corte ${report.fecha_corte}`}
+      />
 
       <section className="report-page">
         <SectionHeader title="Ficha de cada indicador" meta="fecha de corte · denominador · fuente · regla" />
