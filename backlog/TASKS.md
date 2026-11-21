@@ -163,3 +163,18 @@ Append-only; added to .uak/TASKS.md from main. Why: adding tasks never waits for
 - **Acceptance:**
   - Shell mounts the landing as home (brand click returns to it; no tab highlighted there) and Informe/any screen keeps using huella:tab
 - **Verify:** `test -s web/DESIGN.md && ls web/public/design-lock/screens/*-1280.png && bash .uak/bin/uak lint`
+## HR-016 · Informe visual: gráficas sugeridas y constructor de gráficas
+
+- **Type:** feature
+- **Priority:** P0
+- **Estimate:** 45 min
+- **Rubric / Spec:** C2, C5 · IDEA.md §4 step 6, §8 (utilidad, innovación)
+- **Depends on:** HR-006
+- **Uses contract:** HR-001, HR-011, HR-012
+- **Related:** HR-009
+- **Paths:** web/src/lib/charts.ts, web/src/lib/charts.test.ts, web/src/features/report/
+- **Freeze-Allowed:** no
+- **Acceptance:** Recipe: detail · Hero: the report cover Plate, now led by charts instead of paragraphs, `charts.aggregate(records, persons, { measure, dimension })`: measures registros, personas únicas, atenciones, participaciones; dimensions estado, municipio, servicio, programa, mes, alianza. Unique people count each woman once per category (clusters from confirmed links), `charts.suggest(state)` proposes the charts that fit the loaded data: personas por estado, servicios por tipo, atenciones y participaciones por programa side by side (never added into one series), filas vs personas únicas por estado, alertas de calidad por regla, mujeres únicas por alianza, atenciones por mes, "Arma tu gráfica": the person picks measure × dimension and type (barras, columnas, línea solo para mes, pastel solo con 6 categorías o menos); invalid combinations are disabled with the reason, Charts can be added to and removed from the report; they render in the PDF (print) and their data goes into the CSV, Every chart shows its source, cut-off date and "estimado, no oficial" or "validado"; charts update live when a match is confirmed, Colors only from the design tokens (rose ramp); built with Recharts, accessible names, respects reduced motion
+- **Tests:** aggregates_measure_by_dimension, unique_people_by_dimension_counts_each_woman_once, never_adds_atenciones_and_participaciones_in_one_series, suggests_charts_that_fit_the_loaded_data
+- **Verify:** `npm --prefix web test -- --run src/lib/charts.test.ts && npm --prefix web run build`
+- **Next step:** write the 4 tests in `web/src/lib/charts.test.ts` against stubs, then `uak red HR-016`

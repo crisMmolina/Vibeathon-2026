@@ -13,3 +13,4 @@ Why: a reversible option after 15 min keeps work moving.
 - 1795288514 | HR-014 | follow-up of HR-002 by crismmolina-1: Bottom nav at 390: the 6 tabs must fit (last tab Informe is clipped) | Why: same Paths, no scope change
 - 1795289020 | HR-005 | views lazily fill store.issues/pairs; exclude removes record | Why: upload does not compute them; indicators have no excluded concept
 - 1795289382 | HR-015 | follow-up of HR-002 by crismmolina-2: Shell mounts the landing as home (brand click returns to it; no tab highlighted there) and Informe/any screen keeps using huella:tab | Why: same Paths, no scope change
+- 1795289756 | plan | crisMmolina/crisMmolina | tasks added: HR-016 | Why: backlog without PR (Plan-Channel: claims)
