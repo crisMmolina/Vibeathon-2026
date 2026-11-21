@@ -1,5 +1,6 @@
 // Shell · owned by the design lock (HR-002). Every feature renders inside AppShell; views never build a header or nav.
 import { lazy, Suspense, useEffect, useState, type ComponentType } from 'react'
+import LandingView from './features/landing/index.tsx'
 import UploadView from './features/upload/index.tsx'
 import MapView from './features/map/index.tsx'
 import QualityView from './features/quality/index.tsx'
@@ -28,28 +29,35 @@ const LOCKED: Record<string, ComponentType> = {
 export default function App() {
   const params = new URLSearchParams(location.search)
   const [tab, setTab] = useState(TABS.some((t) => t.id === params.get('tab')) ? params.get('tab')! : 'carga')
+  // The bare URL opens the landing (home); a tab, ?tab= or ?lock= opens the app.
+  const [home, setHome] = useState(!params.has('tab') && !params.has('lock'))
+  const open = (id: string) => {
+    setTab(id)
+    setHome(false)
+    window.scrollTo?.(0, 0)
+  }
   // A screen moves the flow forward with: window.dispatchEvent(new CustomEvent('huella:tab', { detail: 'mapa' }))
   useEffect(() => {
     const go = (e: Event) => {
       const id = (e as CustomEvent<string>).detail
       if (!TABS.some((t) => t.id === id)) return
-      setTab(id)
-      window.scrollTo?.(0, 0)
+      open(id)
     }
     window.addEventListener('huella:tab', go)
     return () => window.removeEventListener('huella:tab', go)
   }, [])
   const rol = useApp((s) => s.rol)
   const setRol = useApp((s) => s.setRol)
-  const View = (params.has('lock') && LOCKED[tab]) || TABS.find((t) => t.id === tab)!.View
+  const View = home ? LandingView : (params.has('lock') && LOCKED[tab]) || TABS.find((t) => t.id === tab)!.View
 
   return (
     <AppShell
       nav={
         <NavBar
           items={TABS}
-          current={tab}
-          onSelect={setTab}
+          current={home ? '' : tab}
+          onSelect={open}
+          onHome={() => (setHome(true), window.scrollTo?.(0, 0))}
           end={
             <>
               <select className="ui-btn" data-size="sm" aria-label="Actuar como" value={rol} onChange={(e) => setRol(e.target.value as Rol)}>
