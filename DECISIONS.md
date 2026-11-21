@@ -7,3 +7,4 @@ Why: a reversible option after 15 min keeps work moving.
 - 1795286207 | plan | crisMmolina/crisMmolina | tasks added: HR-012 HR-005 HR-006 HR-007 HR-008 HR-009 | Why: backlog without PR (Plan-Channel: claims)
 - 1795286977 | deadline lease/HR-002/1795286946 | REQUIRES_RECOVERY | Claim kept; read the summary and use release --expired --read-summary. No work is deleted.
 - 1795287541 | HR-002 | Direction Lamina (R1 v1) | Why: human pick
+- 1795288494 | HR-003 | alianzas.csv treated as catalog, skips mapping; Ver el mapa dispatches window event huella:tab | Why: App.tsx owned by HR-002, outside Paths
