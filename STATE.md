@@ -1,15 +1,16 @@
 # STATE
 
 Phase: feature freeze; authorized fixes, rehearsal and submission only
-Updated: 1795296677
-AVAILABLE: HR-014 
-CLAIMED: -
+Updated: 1795296701
+AVAILABLE: -
+CLAIMED: HR-014 
 BLOCKED: -
 REVIEW: -
 INTEGRATED: (18; last 12) ... HR-007 HR-008 HR-009 HR-010 HR-011 HR-012 HR-013 HR-015 HR-016 HR-017 HR-018 HR-019 
 CANCELLED: -
 
 Claims (first 24; status --task ID shows detail):
+HR-014 | CLAIMED | crismmolina-2 | until 1795299401
 
 Blockers: BLOCKED tasks; use status --task ID --summary.
 Current decisions (last 5):
