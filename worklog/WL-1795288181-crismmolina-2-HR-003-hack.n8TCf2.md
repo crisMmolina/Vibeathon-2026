@@ -6,7 +6,7 @@
 - Why: App.tsx owned by HR-002, outside Paths
 - Failing: none
 - Commands: npm --prefix web test -- --run src/features/upload && npm --prefix web run build
-- Next: Wait for review of 49ae0f6 then uak merge HR-003
+- Next: Humano: Smoke red or product unverified: PRODUCT_UNVERIFIED: missing .uak/bin/smoke-project; exit 2. (log: /Users/cristophermmolina/Documents/Projects/Vibeathon/Vibeathon-2026/.git/worktrees/hr-003/uak-out/gate-HR-003-smoke-1795288688.log)
 
 ## History
 - 1795288181 | CLAIMED | crismmolina-2 | claim; next: write the 2 tests in `web/src/features/upload/upload.test.tsx`, then `uak red HR-003` | Harness: unknown | Model: unknown
@@ -14,3 +14,4 @@
 - 1795288494 | REVIEW | crismmolina-2 | checkpoint; next: Wait for review of 49ae0f6 then uak merge HR-003 | Harness: unknown | Model: unknown
 - 1795288630 | REVIEW | crismmolina-1 | review; approve; SHA 49ae0f6a7e9c3f31bdc27ab2c01e459fb67a1164; reviewer crismmolina-1 | Harness: unknown | Model: unknown
 - 1795288677 | REVIEW | crismmolina-2 | heartbeat; lease until 1795303077 | Harness: unknown | Model: unknown
+- 1795288688 | REVIEW | crismmolina-2 | merge rechazado; Smoke red or product unverified: PRODUCT_UNVERIFIED: missing .uak/bin/smoke-project; exit 2. (log: /Users/cristophermmolina/Documents/Projects/Vibeathon/Vibeathon-2026/.git/worktrees/hr-003/uak-out/gate-HR-003-smoke-1795288688.log) | Harness: unknown | Model: unknown
