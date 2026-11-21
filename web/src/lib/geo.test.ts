@@ -34,3 +34,12 @@ describe('states geometry (web/public/geo/estados.geojson)', () => {
     expect(statSync(path).size).toBeLessThan(500_000)
   })
 })
+
+describe('pink ramp (design tokens)', () => {
+  it('pink_ramp_reads_design_tokens', async () => {
+    const { PINK_RAMP, rampColor } = await import('./geo.ts')
+    expect(PINK_RAMP.every((c) => c.startsWith('var(--'))).toBe(true)
+    expect(rampColor(0, 10)).toBe(PINK_RAMP[0])
+    expect(rampColor(10, 10)).toBe(PINK_RAMP[PINK_RAMP.length - 1])
+  })
+})

@@ -30,8 +30,8 @@ export function aggregateByState(records: Record[], persons?: Person[]): StateAg
   return [...out.values()].sort((a, b) => a.cve_ent.localeCompare(b.cve_ent))
 }
 
-/** Pink ramp (pale → deep) used by fill-extrusion; t in 0..1. */
-export const PINK_RAMP = ['#FCE4EC', '#F8BBD0', '#F08FAA', '#E5739A', '#D9577F'] as const
+/** Pink ramp (pale → deep) from the design tokens in web/src/index.css; t in 0..1. */
+export const PINK_RAMP = ['var(--rose-pale)', 'var(--rose)', 'var(--rose-deep)', 'var(--accent)'] as const
 
 export function rampColor(value: number, max: number): string {
   if (max <= 0) return PINK_RAMP[0]
