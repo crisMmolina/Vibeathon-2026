@@ -15,3 +15,4 @@ Why: a reversible option after 15 min keeps work moving.
 - 1795289382 | HR-015 | follow-up of HR-002 by crismmolina-2: Shell mounts the landing as home (brand click returns to it; no tab highlighted there) and Informe/any screen keeps using huella:tab | Why: same Paths, no scope change
 - 1795289756 | plan | crisMmolina/crisMmolina | tasks added: HR-016 | Why: backlog without PR (Plan-Channel: claims)
 - 1795290308 | HR-017 | follow-up of HR-004 by crismmolina-1: Map: clicking an alliance point opens its card in Alianzas | Why: same Paths, no scope change
+- 1795290311 | HR-018 | follow-up of HR-011 by crismmolina-1: geo.ts: pink ramp from tokens so design-lint passes | Why: same Paths, no scope change

@@ -190,3 +190,15 @@ Append-only; added to .uak/TASKS.md from main. Why: adding tasks never waits for
 - **Acceptance:**
   - Map: clicking an alliance point opens its card in Alianzas
 - **Verify:** `npm --prefix web test -- --run src/features/map && npm --prefix web run build`
+
+## HR-018 · geo.ts: pink ramp from tokens so design-lint passes (follow-up of HR-011)
+
+- **Type:** follow-up
+- **Priority:** P1
+- **Depends on:** HR-011
+- **Follow-up of:** HR-011
+- **Paths:** web/src/lib/geo.ts, web/src/lib/indicators.ts, web/src/lib/geo.test.ts, web/src/lib/indicators.test.ts, web/public/geo/
+- **Freeze-Allowed:** no
+- **Acceptance:**
+  - geo.ts: pink ramp from tokens so design-lint passes
+- **Verify:** `npm --prefix web test -- --run src/lib/geo.test.ts src/lib/indicators.test.ts && npm --prefix web run build`
