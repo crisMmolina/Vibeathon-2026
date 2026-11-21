@@ -8,15 +8,16 @@ import {
 } from '../../lib/charts.ts'
 
 const SERIES_COLORS = ['var(--rose-deep)', 'var(--rose)', 'var(--accent)', 'var(--rose-pale)']
+const legendText = (v: string) => <span style={{ color: 'var(--text)' }}>{v}</span>
 const reduced = () => typeof matchMedia === 'function' && matchMedia('(prefers-reduced-motion: reduce)').matches
 
-export function ChartView({ ctx, spec, estado, fuente, onRemove }: { ctx: ChartCtx; spec: ChartSpec; estado: string; fuente: string; onRemove?: () => void }) {
+export function ChartView({ ctx, spec, estado, fuente, onRemove, wide }: { ctx: ChartCtx; spec: ChartSpec; estado: string; fuente: string; onRemove?: () => void; wide?: boolean }) {
   const rows = useMemo(() => series(ctx, spec).slice(0, spec.dimension === 'mes' ? 24 : 12), [ctx, spec])
   const anim = !reduced()
   const h = spec.type === 'barras' ? Math.max(160, rows.length * 30 + 40) : 240
   const axisTick = { fill: 'var(--text-2)', fontSize: 12 }
   return (
-    <figure className="report-chart" style={{ margin: 0, border: '1px solid var(--line)', padding: 'var(--s-4)', display: 'grid', gap: 'var(--s-3)', breakInside: 'avoid' }}>
+    <figure className="report-chart" style={{ gridColumn: wide ? '1 / -1' : undefined, margin: 0, border: '1px solid var(--line)', padding: 'var(--s-4)', display: 'grid', gap: 'var(--s-3)', breakInside: 'avoid' }}>
       <figcaption style={{ display: 'flex', justifyContent: 'space-between', gap: 'var(--s-3)', alignItems: 'baseline' }}>
         <strong>{spec.title}</strong>
         {onRemove && <Button variant="ghost" size="sm" className="no-print" onClick={onRemove} aria-label={`Quitar ${spec.title} del informe`}>Quitar</Button>}
@@ -32,7 +33,7 @@ export function ChartView({ ctx, spec, estado, fuente, onRemove }: { ctx: ChartC
                   {rows.map((_, i) => <Cell key={i} fill={SERIES_COLORS[i % SERIES_COLORS.length]} stroke="var(--bg)" />)}
                 </Pie>
                 <Tooltip />
-                <Legend />
+                <Legend formatter={legendText} />
               </PieChart>
             ) : spec.type === 'linea' ? (
               <LineChart data={rows} margin={{ left: 0, right: 16, top: 8, bottom: 0 }}>
@@ -40,7 +41,7 @@ export function ChartView({ ctx, spec, estado, fuente, onRemove }: { ctx: ChartC
                 <XAxis dataKey="label" tick={axisTick} />
                 <YAxis allowDecimals={false} tick={axisTick} width={36} />
                 <Tooltip />
-                <Legend />
+                <Legend formatter={legendText} />
                 {spec.measures.map((m, i) => <Line key={m} type="monotone" dataKey={m} name={MEASURE_LABEL[m]} stroke={SERIES_COLORS[i]} strokeWidth={2} dot={{ r: 3 }} isAnimationActive={anim} />)}
               </LineChart>
             ) : spec.type === 'barras' ? (
@@ -49,7 +50,7 @@ export function ChartView({ ctx, spec, estado, fuente, onRemove }: { ctx: ChartC
                 <XAxis type="number" allowDecimals={false} tick={axisTick} />
                 <YAxis type="category" dataKey="label" tick={axisTick} width={150} />
                 <Tooltip />
-                {spec.measures.length > 1 && <Legend />}
+                {spec.measures.length > 1 && <Legend formatter={legendText} />}
                 {spec.measures.map((m, i) => <Bar key={m} dataKey={m} name={MEASURE_LABEL[m]} fill={SERIES_COLORS[i]} isAnimationActive={anim} />)}
               </BarChart>
             ) : (
@@ -58,7 +59,7 @@ export function ChartView({ ctx, spec, estado, fuente, onRemove }: { ctx: ChartC
                 <XAxis dataKey="label" tick={axisTick} interval={0} />
                 <YAxis allowDecimals={false} tick={axisTick} width={36} />
                 <Tooltip />
-                {spec.measures.length > 1 && <Legend />}
+                {spec.measures.length > 1 && <Legend formatter={legendText} />}
                 {spec.measures.map((m, i) => <Bar key={m} dataKey={m} name={MEASURE_LABEL[m]} fill={SERIES_COLORS[i]} isAnimationActive={anim} />)}
               </BarChart>
             )}
@@ -143,7 +144,7 @@ export function ReportCharts({ ctx, estado, fuente, chosen, setChosen }: { ctx: 
         ))}
       </div>
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 420px), 1fr))', gap: 'var(--s-4)' }}>
-        {chosen.map((s) => <ChartView key={s.id} ctx={ctx} spec={s} estado={estado} fuente={fuente} onRemove={() => setChosen(chosen.filter((c) => c.id !== s.id))} />)}
+        {chosen.map((s, i) => <ChartView key={s.id} wide={i === 0} ctx={ctx} spec={s} estado={estado} fuente={fuente} onRemove={() => setChosen(chosen.filter((c) => c.id !== s.id))} />)}
       </div>
       <ChartBuilder ctx={ctx} onAdd={(s) => setChosen([...chosen, s])} />
     </section>
