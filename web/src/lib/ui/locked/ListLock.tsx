@@ -65,6 +65,9 @@ export default function ListLock() {
               <>
                 <Button size="sm">Corregir</Button>
                 <Button size="sm" variant="ghost">
+                  Aceptar
+                </Button>
+                <Button size="sm" variant="ghost">
                   Excluir
                 </Button>
               </>

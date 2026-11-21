@@ -5,7 +5,7 @@ import type { Tone } from '../index.tsx'
 const FILES = ['jornadas_tamizaje.csv · 120 filas', 'salud_que_florece.xlsx · 80 filas', 'alianzas.csv · 8 filas']
 
 const COLUMNS = ['Nombre', 'Apellido paterno', 'Fecha nacimiento', 'Telefono', 'Municipio', 'mpio']
-const FIELDS = ['nombre', 'ap1', 'fecha_nac', 'tel', 'municipio']
+const FIELDS = ['Nombre', 'Apellido paterno', 'Fecha de nacimiento', 'Teléfono', 'Municipio']
 
 // One link per source column: target field index, suggested confidence, dashed when it needs a look.
 const LINKS = [
@@ -18,9 +18,9 @@ const LINKS = [
 ]
 
 const ROWS: { tone: Tone; title: string; meta: string; pct: string }[] = [
-  { tone: 'ok', title: 'Municipio → municipio', meta: 'jornadas_tamizaje.csv · sinónimo exacto', pct: '100 %' },
-  { tone: 'ok', title: 'Apellido paterno → ap1', meta: 'jornadas_tamizaje.csv · sinónimo conocido', pct: '96 %' },
-  { tone: 'warn', title: 'mpio → municipio', meta: 'salud_que_florece.xlsx · similitud de nombre', pct: '91 %' },
+  { tone: 'ok', title: 'Municipio → Municipio', meta: 'jornadas_tamizaje.csv · sinónimo exacto', pct: '100 %' },
+  { tone: 'ok', title: 'Apellido paterno → Apellido paterno', meta: 'jornadas_tamizaje.csv · sinónimo conocido', pct: '96 %' },
+  { tone: 'warn', title: 'mpio → Municipio', meta: 'salud_que_florece.xlsx · similitud de nombre', pct: '91 %' },
 ]
 
 // Geometry of the mapping network, in viewBox units (0 0 900 360).
