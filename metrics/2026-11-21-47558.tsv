@@ -14,6 +14,7 @@
 # ledger: epoch, command, task, exit, code, ms, agent, harness (exit - = ended in an exec; #sum rows = older lines, counted)
 # ledger: epoch, command, task, exit, code, ms, agent, harness (exit - = ended in an exec; #sum rows = older lines, counted)
 # ledger: epoch, command, task, exit, code, ms, agent, harness (exit - = ended in an exec; #sum rows = older lines, counted)
+# ledger: epoch, command, task, exit, code, ms, agent, harness (exit - = ended in an exec; #sum rows = older lines, counted)
 1795282304	start	-	-	-	-	-	other
 1795282304	clock	-	-	-	-	-	other
 1795282304	start	-	-	-	-	-	other
@@ -340,3 +341,16 @@
 1795296539	status	HR-008	0	-	2000	crismmolina-2	other
 1795296549	inbox	-	0	-	4000	crismmolina-2	other
 1795296570	claim	HR-014	3	freeze	2000	crismmolina-2	other
+1795296677	allow	-	0	-	2000	crisMmolina	other
+1795296701	claim	HR-014	0	-	3000	crismmolina-2	other
+1795296704	inbox	-	0	-	1000	crismmolina-2	other
+1795298429	red	HR-014	-	-	-	crismmolina-2	other
+1795296757	lint	-	0	-	3000	crismmolina-2	other
+1795296826	done	HR-014	0	-	9000	crismmolina-2	other
+1795296871	integrate	HR-014	0	-	5000	crisMmolina	other
+1795297450	status	-	0	-	3000	crismmolina-2	other
+1795297453	status	HR-014	0	-	1000	crismmolina-2	other
+1795298429	board	-	-	-	-	crismmolina-2	other
+1795298429	stats	-	-	-	-	crismmolina-2	other
+1795297584	status	-	0	-	1000	-	claude-code
+1795297585	status	HR-014	0	-	2000	-	claude-code
