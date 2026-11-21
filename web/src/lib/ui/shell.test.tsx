@@ -38,3 +38,20 @@ describe('shell home (HR-015)', () => {
     expect(container.querySelector('[data-feature="landing"]')).toBeInTheDocument()
   })
 })
+
+describe('shell brand (HR-019)', () => {
+  beforeEach(() => window.history.replaceState({}, '', '/'))
+
+  it('shows_the_huella_rosa_mark_next_to_the_eira_logo', () => {
+    render(<App />)
+    const home = screen.getByRole('link', { name: /inicio/ })
+    expect(home.querySelector('svg[aria-label="EIRA"]')).toBeInTheDocument()
+    expect(home.querySelector('svg[aria-label="Huella Rosa"]')).toBeInTheDocument()
+  })
+
+  it('sets_the_favicon_and_the_title_of_the_product', () => {
+    render(<App />)
+    expect(document.querySelector('link[rel="icon"]')).toHaveAttribute('href', '/brand/huella-rosa-mark.svg')
+    expect(document.title).toBe('Huella Rosa · EIRA')
+  })
+})
