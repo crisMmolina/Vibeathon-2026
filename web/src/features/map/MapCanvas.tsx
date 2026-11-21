@@ -74,7 +74,8 @@ export default function MapCanvas({ counts, max, alliances, onSelectAlliance, on
           el.setAttribute('aria-label', `Alianza: ${a.nombre}`)
           el.style.cursor = 'pointer'
           el.addEventListener('click', () => onSelectAlliance?.(a.id))
-          if (!reduced()) el.animate([{ boxShadow: '0 0 0 0 rgba(217,87,127,.55)' }, { boxShadow: '0 0 0 12px rgba(217,87,127,0)' }], { duration: 1600, iterations: Infinity })
+          const pink = cssVar('--rose-deep') // token, with alpha appended for the pulse ring
+          if (!reduced()) el.animate([{ boxShadow: `0 0 0 0 ${pink}8c` }, { boxShadow: `0 0 0 12px ${pink}00` }], { duration: 1600, iterations: Infinity })
           new gl.Marker({ element: el }).setLngLat([a.lng, a.lat]).addTo(map)
         }
         setReady(true)
