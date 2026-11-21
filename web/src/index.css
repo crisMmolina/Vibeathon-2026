@@ -697,3 +697,13 @@ select {
     white-space: nowrap;
   }
 }
+
+/* 390: a plate body that only held the hidden diagram collapses, and flow content clears the sticky action. */
+@media (max-width: 860px) {
+  .ui-plate > div:has(> svg:only-child) {
+    display: none;
+  }
+  .ui-layout-flow {
+    padding-bottom: var(--s-16);
+  }
+}

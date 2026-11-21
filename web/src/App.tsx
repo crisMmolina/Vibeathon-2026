@@ -1,5 +1,5 @@
 // Shell · owned by the design lock (HR-002). Every feature renders inside AppShell; views never build a header or nav.
-import { lazy, Suspense, useState, type ComponentType } from 'react'
+import { lazy, Suspense, useEffect, useState, type ComponentType } from 'react'
 import UploadView from './features/upload/index.tsx'
 import MapView from './features/map/index.tsx'
 import QualityView from './features/quality/index.tsx'
@@ -28,6 +28,17 @@ const LOCKED: Record<string, ComponentType> = {
 export default function App() {
   const params = new URLSearchParams(location.search)
   const [tab, setTab] = useState(TABS.some((t) => t.id === params.get('tab')) ? params.get('tab')! : 'carga')
+  // A screen moves the flow forward with: window.dispatchEvent(new CustomEvent('huella:tab', { detail: 'mapa' }))
+  useEffect(() => {
+    const go = (e: Event) => {
+      const id = (e as CustomEvent<string>).detail
+      if (!TABS.some((t) => t.id === id)) return
+      setTab(id)
+      window.scrollTo?.(0, 0)
+    }
+    window.addEventListener('huella:tab', go)
+    return () => window.removeEventListener('huella:tab', go)
+  }, [])
   const rol = useApp((s) => s.rol)
   const setRol = useApp((s) => s.setRol)
   const View = (params.has('lock') && LOCKED[tab]) || TABS.find((t) => t.id === tab)!.View
