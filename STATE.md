@@ -1,16 +1,16 @@
 # STATE
 
 Phase: execution
-Updated: 1795287364
+Updated: 1795287526
 AVAILABLE: HR-003 HR-004 HR-005 HR-006 HR-007 HR-008 HR-009 
-CLAIMED: HR-002 
+CLAIMED: -
 BLOCKED: -
-REVIEW: -
+REVIEW: HR-002 
 INTEGRATED: HR-001 HR-010 HR-011 HR-012 
 CANCELLED: -
 
 Claims (first 24; status --task ID shows detail):
-HR-002 | CLAIMED | crismmolina-2 | until 1795290064
+HR-002 | REVIEW | crismmolina-2 | until 1795301926
 
 Blockers: BLOCKED tasks; use status --task ID --summary.
 Current decisions (last 5):
