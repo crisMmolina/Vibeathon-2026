@@ -6,7 +6,7 @@
 - Why: App.tsx owned by HR-002, outside Paths
 - Failing: none
 - Commands: npm --prefix web test -- --run src/features/upload && npm --prefix web run build
-- Next: Humano: Smoke red or product unverified: PRODUCT_UNVERIFIED: missing .uak/bin/smoke-project; exit 2. (log: /Users/cristophermmolina/Documents/Projects/Vibeathon/Vibeathon-2026/.git/worktrees/hr-003/uak-out/gate-HR-003-smoke-1795288688.log)
+- Next: Integrated in main: 8b1d89ca11e1d7094d952021a741319cf0accc3f (recorded by crismmolina-2)
 
 ## History
 - 1795288181 | CLAIMED | crismmolina-2 | claim; next: write the 2 tests in `web/src/features/upload/upload.test.tsx`, then `uak red HR-003` | Harness: unknown | Model: unknown
@@ -15,3 +15,4 @@
 - 1795288630 | REVIEW | crismmolina-1 | review; approve; SHA 49ae0f6a7e9c3f31bdc27ab2c01e459fb67a1164; reviewer crismmolina-1 | Harness: unknown | Model: unknown
 - 1795288677 | REVIEW | crismmolina-2 | heartbeat; lease until 1795303077 | Harness: unknown | Model: unknown
 - 1795288688 | REVIEW | crismmolina-2 | merge rechazado; Smoke red or product unverified: PRODUCT_UNVERIFIED: missing .uak/bin/smoke-project; exit 2. (log: /Users/cristophermmolina/Documents/Projects/Vibeathon/Vibeathon-2026/.git/worktrees/hr-003/uak-out/gate-HR-003-smoke-1795288688.log) | Harness: unknown | Model: unknown
+- 1795288699 | INTEGRATED | crismmolina-2 | integrate; recorded by crismmolina-2; PR https://github.com/crisMmolina/Vibeathon-2026/pull/6; merged 8b1d89ca11e1d7094d952021a741319cf0accc3f; proof ancestry | Harness: claude-code | Model: unknown
