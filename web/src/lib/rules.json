@@ -1,0 +1,11 @@
+{
+  "version": "calidad-1.0",
+  "periodo": { "desde": "2026-01-01", "hasta": "2026-09-30" },
+  "rules": [
+    { "id": "localidad_requerida", "field": "localidad", "kind": "required", "severity": "ambar", "label": "Falta la localidad" },
+    { "id": "fecha_nac_formato", "field": "fecha_nac", "kind": "date", "severity": "rojo", "label": "Fecha de nacimiento inválida" },
+    { "id": "telefono_formato", "field": "tel", "kind": "phone", "severity": "ambar", "label": "Teléfono inválido (10 dígitos)" },
+    { "id": "fuera_de_periodo", "field": "fecha_servicio", "kind": "period", "severity": "ambar", "label": "Servicio fuera del periodo del informe" },
+    { "id": "columna_ambigua", "field": "*", "kind": "ambiguous_column", "severity": "verde", "label": "Columnas con nombres distintos para el mismo campo" }
+  ]
+}
