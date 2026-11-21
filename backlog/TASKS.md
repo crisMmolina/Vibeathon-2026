@@ -178,3 +178,15 @@ Append-only; added to .uak/TASKS.md from main. Why: adding tasks never waits for
 - **Tests:** aggregates_measure_by_dimension, unique_people_by_dimension_counts_each_woman_once, never_adds_atenciones_and_participaciones_in_one_series, suggests_charts_that_fit_the_loaded_data
 - **Verify:** `npm --prefix web test -- --run src/lib/charts.test.ts && npm --prefix web run build`
 - **Next step:** write the 4 tests in `web/src/lib/charts.test.ts` against stubs, then `uak red HR-016`
+
+## HR-017 · Map: clicking an alliance point opens its card in Alianzas (follow-up of HR-004)
+
+- **Type:** follow-up
+- **Priority:** P1
+- **Depends on:** HR-004
+- **Follow-up of:** HR-004
+- **Paths:** web/src/features/map/
+- **Freeze-Allowed:** no
+- **Acceptance:**
+  - Map: clicking an alliance point opens its card in Alianzas
+- **Verify:** `npm --prefix web test -- --run src/features/map && npm --prefix web run build`
