@@ -6,6 +6,7 @@ import { apply, suggest } from '../../lib/mapping.ts'
 import { useApp } from '../../store/index.ts'
 import { pickEngine } from './engine.ts'
 import MapView from './index.tsx'
+import { openAlliance } from './openAlliance.ts'
 
 vi.mock('./MapCanvas.tsx', () => ({ default: () => <div data-testid="map-canvas" /> }))
 
@@ -33,5 +34,21 @@ describe('MapView (IDEA.md §4 step 2)', () => {
     expect(pickEngine('')).toBe('maplibre')
     expect(pickEngine('sk.secret')).toBe('maplibre')
     expect(pickEngine('pk.eyJ1Ijoi')).toBe('mapbox')
+  })
+
+  it('clicking_an_alliance_point_opens_its_card', () => {
+    vi.useFakeTimers()
+    const seen: string[] = []
+    const tab = (e: Event) => seen.push(`tab:${(e as CustomEvent<string>).detail}`)
+    const card = (e: Event) => seen.push(`card:${(e as CustomEvent<string>).detail}`)
+    window.addEventListener('huella:tab', tab)
+    window.addEventListener('huella:alianza', card)
+    openAlliance('AL-07')
+    expect(seen).toEqual(['tab:alianzas'])
+    vi.runAllTimers()
+    expect(seen).toEqual(['tab:alianzas', 'card:AL-07'])
+    window.removeEventListener('huella:tab', tab)
+    window.removeEventListener('huella:alianza', card)
+    vi.useRealTimers()
   })
 })
