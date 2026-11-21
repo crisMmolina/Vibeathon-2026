@@ -35,6 +35,7 @@ Disabled: `--disabled` fill with `--disabled-ink` text, no border color; never t
 
 ## Shell (owned by the design lock task)
 - `AppShell` · `NavBar` (EIRA mark + "Huella Rosa", `segmented` numbered tabs for the 6 steps, role selector and `SIMULADO` badge at the end) · `PageHeader` · `PageLayout` (`map`, `flow`, `list`, `detail`)
+- Brand: the EIRA wordmark first, then the Huella Rosa mark (`HuellaMark`: EIRA's triangle with fingerprint ridges) and the name. Files in `web/public/brand/`: `huella-rosa-mark.svg` (favicon), `huella-rosa-logo.png` (transparent), `huella-rosa-logo-fondo-blanco.png`, `huella-rosa-icono-1024.png`
 - At 390 wide: `the tabs become a fixed bottom bar that scrolls sideways; the map panel drops under the map`
 
 ## Screens: one recipe and one hero each

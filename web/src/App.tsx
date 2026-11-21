@@ -29,6 +29,13 @@ const LOCKED: Record<string, ComponentType> = {
 export default function App() {
   const params = new URLSearchParams(location.search)
   const [tab, setTab] = useState(TABS.some((t) => t.id === params.get('tab')) ? params.get('tab')! : 'carga')
+  // Brand in the browser tab (index.html belongs to the scaffold task, so the shell sets it).
+  useEffect(() => {
+    document.title = 'Huella Rosa · EIRA'
+    const icon = document.querySelector<HTMLLinkElement>('link[rel="icon"]') ?? document.head.appendChild(Object.assign(document.createElement('link'), { rel: 'icon' }))
+    icon.type = 'image/svg+xml'
+    icon.setAttribute('href', '/brand/huella-rosa-mark.svg')
+  }, [])
   // The bare URL opens the landing (home); a tab, ?tab= or ?lock= opens the app.
   const [home, setHome] = useState(!params.has('tab') && !params.has('lock'))
   const open = (id: string) => {

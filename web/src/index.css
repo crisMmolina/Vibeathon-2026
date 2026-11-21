@@ -119,12 +119,18 @@ select {
   text-decoration: none;
   color: var(--text);
 }
+.ui-brand .ui-brand-name svg {
+  height: 26px;
+}
 .ui-brand svg {
   height: 22px;
   width: auto;
   display: block;
 }
 .ui-brand-name {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2);
   padding-left: var(--s-3);
   border-left: 1px solid var(--frame);
   font-family: var(--font-display);
@@ -705,5 +711,22 @@ select {
   }
   .ui-layout-flow {
     padding-bottom: var(--s-16);
+  }
+}
+
+/* 390: the brand now carries two marks, so the nav tightens to fit. */
+@media (max-width: 860px) {
+  .ui-nav {
+    gap: var(--s-3);
+  }
+  .ui-brand {
+    gap: var(--s-2);
+  }
+  .ui-brand-name {
+    padding-left: var(--s-2);
+  }
+  .ui-nav-end select {
+    max-width: 108px;
+    padding: 0 var(--s-2);
   }
 }

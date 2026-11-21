@@ -17,6 +17,27 @@ export function EiraLogo() {
   )
 }
 
+/** The product's own mark: EIRA's triangle with the concentric ridges of a fingerprint (the "huella"). */
+export function HuellaMark() {
+  return (
+    <svg viewBox="0 0 100 100" role="img" aria-label="Huella Rosa">
+      <defs>
+        <clipPath id="huella-mark">
+          <path d="M50 8 L94 90 L6 90 Z" />
+        </clipPath>
+      </defs>
+      <path d="M50 8 L94 90 L6 90 Z" fill="var(--rose-deep)" stroke="var(--rose-deep)" strokeWidth="6" strokeLinejoin="round" />
+      <g clipPath="url(#huella-mark)" fill="none" stroke="var(--bg)" strokeWidth="4.2" strokeLinecap="round">
+        <path d="M50 96 V84" />
+        <path d="M39 96 V82 a11 11 0 0 1 22 0 V96" />
+        <path d="M28 96 V80 a22 22 0 0 1 44 0 V96" />
+        <path d="M17 96 V78 a33 33 0 0 1 66 0 V96" />
+        <path d="M6 96 V76 a44 44 0 0 1 88 0 V96" />
+      </g>
+    </svg>
+  )
+}
+
 export function AppShell({ nav, children }: { nav: ReactNode; children: ReactNode }) {
   return (
     <div className="ui-shell">
@@ -36,7 +57,10 @@ export function NavBar({ items, current, onSelect, onHome, end }: { items: NavIt
     <header className="ui-nav">
       <a className="ui-brand" href="/" aria-label="EIRA · Huella Rosa, inicio" onClick={onHome && ((e) => (e.preventDefault(), onHome()))}>
         <EiraLogo />
-        <span className="ui-brand-name">Huella Rosa</span>
+        <span className="ui-brand-name">
+          <HuellaMark />
+          Huella Rosa
+        </span>
       </a>
       <nav className="ui-tabs" aria-label="Pasos">
         {items.map((it, i) => (
