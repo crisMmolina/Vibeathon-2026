@@ -8,6 +8,7 @@
 # ledger: epoch, command, task, exit, code, ms, agent, harness (exit - = ended in an exec; #sum rows = older lines, counted)
 # ledger: epoch, command, task, exit, code, ms, agent, harness (exit - = ended in an exec; #sum rows = older lines, counted)
 # ledger: epoch, command, task, exit, code, ms, agent, harness (exit - = ended in an exec; #sum rows = older lines, counted)
+# ledger: epoch, command, task, exit, code, ms, agent, harness (exit - = ended in an exec; #sum rows = older lines, counted)
 1795282304	start	-	-	-	-	-	other
 1795282304	clock	-	-	-	-	-	other
 1795282304	start	-	-	-	-	-	other
@@ -149,3 +150,56 @@
 1795288224	red	HR-004	-	-	-	crismmolina-1	claude-code
 1795288213	status	HR-004	0	-	2000	crismmolina-1	claude-code
 1795288224	bb	-	-	-	-	crismmolina-1	claude-code
+1795289014	red	HR-004	-	-	-	crismmolina-1	claude-code
+1795289014	red	HR-003	-	-	-	crismmolina-2	other
+1795289014	red	HR-003	-	-	-	crismmolina-2	other
+1795288481	done	HR-003	0	-	6000	crismmolina-2	other
+1795288494	checkpoint	HR-003	0	-	2000	crismmolina-2	other
+1795288497	followup	HR-002	0	-	3000	crismmolina-2	other
+1795288510	claim	HR-013	0	-	4000	crismmolina-2	other
+1795288514	inbox	-	0	-	1000	crismmolina-2	other
+1795288515	status	HR-013	0	-	2000	crismmolina-2	other
+1795288514	followup	HR-002	0	-	7000	crismmolina-1	claude-code
+1795289014	red	HR-013	-	-	-	crismmolina-2	other
+1795288547	lint	-	0	-	2000	crismmolina-2	other
+1795288575	done	HR-004	0	-	6000	crismmolina-1	claude-code
+1795288581	status	-	0	-	3000	crismmolina-1	claude-code
+1795288590	status	HR-013	0	-	1000	crismmolina-1	claude-code
+1795288591	status	HR-003	0	-	2000	crismmolina-1	claude-code
+1795288593	review	HR-003	0	-	4000	crismmolina-1	claude-code
+1795288630	review	HR-003	0	-	4000	crismmolina-1	claude-code
+1795288644	review	HR-004	0	-	4000	cris-2	claude-code
+1795288648	status	HR-004	0	-	1000	cris-2	claude-code
+1795288658	done	HR-013	0	-	5000	crismmolina-2	other
+1795288663	msg	-	0	-	3000	crismmolina-2	other
+1795288666	inbox	-	0	-	2000	crismmolina-2	other
+1795288672	inbox	-	0	-	5000	crismmolina-2	other
+1795288677	heartbeat	HR-003	0	-	3000	crismmolina-2	other
+1795288689	review	HR-004	0	-	21000	cris-2	claude-code
+1795288688	merge	HR-003	0	-	15000	crismmolina-2	other
+1795288699	integrate	HR-003	0	-	25000	crismmolina-2	claude-code
+1795288702	next	-	0	-	3000	crismmolina-2	other
+1795288705	status	-	0	-	2000	crismmolina-2	other
+1795288703	next	-	0	-	5000	-	claude-code
+1795288715	status	HR-005	0	-	1000	crismmolina-2	other
+1795288716	status	HR-006	0	-	2000	crismmolina-2	other
+1795288718	status	HR-009	0	-	2000	crismmolina-2	other
+1795288720	status	HR-007	0	-	2000	crismmolina-2	other
+1795288732	claim	HR-005	0	-	3000	crismmolina-2	other
+1795288735	inbox	-	0	-	2000	crismmolina-2	other
+1795288740	status	HR-006	0	-	2000	-	claude-code
+1795288742	next	-	0	-	2000	-	claude-code
+1795288749	status	HR-005	0	-	1000	-	claude-code
+1795288750	status	HR-013	0	-	2000	-	claude-code
+1795288757	status	HR-013	0	-	2000	crismmolina-1	claude-code
+1795288759	review	HR-013	0	-	3000	crismmolina-1	claude-code
+1795288772	lint	-	0	-	2000	-	claude-code
+1795288784	review	HR-013	0	-	3000	crismmolina-1	claude-code
+1795289014	red	HR-005	-	-	-	crismmolina-2	other
+1795288837	integrate	HR-013	0	-	4000	crismmolina-2	claude-code
+1795288841	integrate	HR-004	0	-	4000	crismmolina-1	claude-code
+1795288857	claim	HR-006	0	-	2000	crismmolina-1	claude-code
+1795288859	inbox	-	0	-	1000	crismmolina-1	claude-code
+1795288863	status	HR-006	0	-	1000	crismmolina-1	claude-code
+1795289014	red	HR-006	-	-	-	crismmolina-1	claude-code
+1795288928	integrate	HR-003	0	-	2000	crismmolina-2	other
