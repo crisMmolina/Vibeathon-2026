@@ -77,9 +77,9 @@ export default function ReportView() {
       <div className="report-page">
         <Plate
           head={<><Chip tone="ink">EIRA · INFORME DE IMPACTO</Chip>{isDemo && <SimBadge label="DATOS SINTÉTICOS" />}</>}
-          foot={<span className="ui-note">Generado en este navegador el {new Date(report.generado).toLocaleString('es-MX')}. Ningún dato salió de esta computadora.</span>}
+          foot={<span className="ui-note">Generado en este navegador el {new Date(report.generado).toLocaleString('es-MX')} · Ningún dato salió de esta computadora.</span>}
         >
-          <div style={{ display: 'grid', gap: 'var(--s-6)', padding: 'var(--s-4) 0' }}>
+          <div style={{ display: 'grid', gap: 'var(--s-6)', padding: 'var(--s-6)' }}>
             {personas && (
               <Stat
                 size="hero"
