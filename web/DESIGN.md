@@ -6,7 +6,7 @@
 
 ## Direction
 - Name: `Lámina` · Intent: `EIRA's impact shown as a labeled specimen sheet: white paper, ink frames, one pink that carries the data`
-- The one memorable element: `the 3D map of Mexico whose states rise in EIRA pink, set in an ink frame with two pink registration squares; everything else is calm paper and hairlines`
+- The one memorable element: `the 3D map of Mexico whose states rise in EIRA pink, full-bleed; plates (Carga, Informe, landing) carry the ink frame with two pink registration squares; everything else is calm paper and hairlines`
 - References: `web/public/design-lock/refs/r1-v1-1280.png` (the picked landing variant); no product links were given
 
 ## Type

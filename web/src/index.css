@@ -666,3 +666,34 @@ select {
     overflow-wrap: anywhere;
   }
 }
+
+/* 390: the tab bar is fixed at the bottom, so sticky actions sit above it; a wide diagram gives way to its rows. */
+@media (max-width: 860px) {
+  .ui-main {
+    padding-bottom: 56px;
+  }
+  .ui-sticky-action {
+    bottom: 56px;
+  }
+  .ui-plate > svg {
+    display: none;
+  }
+}
+
+@media (max-width: 860px) {
+  .ui-plate svg {
+    display: none !important;
+  }
+  .ui-sticky-action > .ui-note {
+    display: none;
+  }
+  .ui-sticky-action > div {
+    flex: 1;
+    flex-wrap: nowrap !important;
+  }
+  .ui-sticky-action .ui-btn {
+    flex: 1;
+    padding: 0 var(--s-2);
+    white-space: nowrap;
+  }
+}
