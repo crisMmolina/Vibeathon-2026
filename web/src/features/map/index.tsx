@@ -8,6 +8,7 @@ import { run as runQuality } from '../../lib/quality.ts'
 import { useApp } from '../../store/index.ts'
 import MapCanvas from './MapCanvas.tsx'
 import { loadDemo } from './loadDemo.ts'
+import { openAlliance } from './openAlliance.ts'
 
 type View = 'filas' | 'personas'
 
@@ -81,7 +82,7 @@ export default function MapView() {
         {failed ? (
           <EmptyState text="El mapa necesita WebGL. Abre esta página en otro navegador; los indicadores siguen a la derecha." />
         ) : (
-          <MapCanvas counts={counts} max={max} alliances={alliances} onFail={() => setFailed(true)} onEngine={setEngine} />
+          <MapCanvas counts={counts} max={max} alliances={alliances} onSelectAlliance={openAlliance} onFail={() => setFailed(true)} onEngine={setEngine} />
         )}
         <div style={{ position: 'absolute', top: 'var(--s-4)', left: 'var(--s-4)', display: 'flex', gap: 'var(--s-2)', flexWrap: 'wrap' }}>
           <Chip tone="ink">LÁMINA 02 · MÉXICO</Chip>
