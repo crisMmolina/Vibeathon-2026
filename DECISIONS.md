@@ -16,3 +16,4 @@ Why: a reversible option after 15 min keeps work moving.
 - 1795289756 | plan | crisMmolina/crisMmolina | tasks added: HR-016 | Why: backlog without PR (Plan-Channel: claims)
 - 1795290308 | HR-017 | follow-up of HR-004 by crismmolina-1: Map: clicking an alliance point opens its card in Alianzas | Why: same Paths, no scope change
 - 1795290311 | HR-018 | follow-up of HR-011 by crismmolina-1: geo.ts: pink ramp from tokens so design-lint passes | Why: same Paths, no scope change
+- 1795290525 | HR-019 | follow-up of HR-002 by crismmolina-2: Huella Rosa logo in the product: brand assets in web/public/brand, the mark in the NavBar next to the name, favicon | Why: same Paths, no scope change

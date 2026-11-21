@@ -202,3 +202,15 @@ Append-only; added to .uak/TASKS.md from main. Why: adding tasks never waits for
 - **Acceptance:**
   - geo.ts: pink ramp from tokens so design-lint passes
 - **Verify:** `npm --prefix web test -- --run src/lib/geo.test.ts src/lib/indicators.test.ts && npm --prefix web run build`
+
+## HR-019 · Huella Rosa logo in the product: brand assets in web/public/brand, the mark in the NavBar next to the name, favicon (follow-up of HR-002)
+
+- **Type:** follow-up
+- **Priority:** P1
+- **Depends on:** HR-002
+- **Follow-up of:** HR-002
+- **Paths:** web/DESIGN.md, web/src/index.css, web/src/lib/ui/, web/src/App.tsx, web/public/design-lock/, web/public/brand/
+- **Freeze-Allowed:** no
+- **Acceptance:**
+  - Huella Rosa logo in the product: brand assets in web/public/brand, the mark in the NavBar next to the name, favicon
+- **Verify:** `test -s web/DESIGN.md && ls web/public/design-lock/screens/*-1280.png && bash .uak/bin/uak lint`
