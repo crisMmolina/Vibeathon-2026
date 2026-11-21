@@ -127,3 +127,15 @@ Append-only; added to .uak/TASKS.md from main. Why: adding tasks never waits for
 - **Tests:** summarizes_unique_women_per_alliance, counts_services_by_type_per_alliance
 - **Verify:** `npm --prefix web test -- --run src/lib/alliances.test.ts && npm --prefix web run build`
 - **Next step:** write the 2 tests against stubs, then `uak red HR-009`
+
+## HR-013 · Shell listens to huella:tab so a screen can move to the next step (Carga → Mapa) (follow-up of HR-002)
+
+- **Type:** follow-up
+- **Priority:** P1
+- **Depends on:** HR-002
+- **Follow-up of:** HR-002
+- **Paths:** web/DESIGN.md, web/src/index.css, web/src/lib/ui/, web/src/App.tsx, web/public/design-lock/, web/public/brand/
+- **Freeze-Allowed:** no
+- **Acceptance:**
+  - Shell listens to huella:tab so a screen can move to the next step (Carga → Mapa)
+- **Verify:** `test -s web/DESIGN.md && ls web/public/design-lock/screens/*-1280.png && bash .uak/bin/uak lint`

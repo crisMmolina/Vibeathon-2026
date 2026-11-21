@@ -8,3 +8,4 @@ Why: a reversible option after 15 min keeps work moving.
 - 1795286977 | deadline lease/HR-002/1795286946 | REQUIRES_RECOVERY | Claim kept; read the summary and use release --expired --read-summary. No work is deleted.
 - 1795287541 | HR-002 | Direction Lamina (R1 v1) | Why: human pick
 - 1795288494 | HR-003 | alianzas.csv treated as catalog, skips mapping; Ver el mapa dispatches window event huella:tab | Why: App.tsx owned by HR-002, outside Paths
+- 1795288497 | HR-013 | follow-up of HR-002 by crismmolina-2: Shell listens to huella:tab so a screen can move to the next step (Carga → Mapa) | Why: same Paths, no scope change
