@@ -2,7 +2,7 @@
 
 > Nombre provisional. Reto 3 de EIRA Movimiento Rosa A.C. · *Consolidación y visualización del impacto social* · Nerdearla Vibeathon by Devin, CDMX, 21-nov-2026.
 
-**Demo en vivo:** https://vibeathon-2026.onrender.com · todo corre en tu navegador, sin servidor.
+**Demo en vivo:** https://vibeathon-2026.onrender.com · **Video:** https://youtu.be/wpDOipo3QRg · todo corre en tu navegador, sin servidor.
 
 EIRA consolida a mano los archivos de sus programas para informar a donantes. Ahí aparece el **doble conteo**: EIRA reporta más de 51,000 personas beneficiadas acumuladas, pero esa cifra *no equivale* a pacientes únicas (Guía institucional y técnica de EIRA para participantes). Esta app carga los CSV y Excel de cada programa, muestra en un mapa 3D de México dónde está el impacto, ayuda a resolver duplicados **siempre con confirmación humana** y exporta un informe trazable.
 
@@ -79,4 +79,4 @@ Backend con roles y autenticación real, almacenamiento cifrado y respaldo, cach
 
 ## Video
 
-Recorrido completo del flujo (3 min o menos): *enlace de YouTube pendiente*.
+Recorrido completo del flujo: https://youtu.be/wpDOipo3QRg
