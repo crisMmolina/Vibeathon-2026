@@ -730,3 +730,17 @@ select {
     padding: 0 var(--s-2);
   }
 }
+
+/* 390 and narrower: the six steps fit the bottom bar without scrolling (HR-014). */
+@media (max-width: 860px) {
+  .ui-tabs {
+    overflow-x: visible;
+  }
+  .ui-tab {
+    flex: 1 1 auto;
+    min-width: 0;
+    padding: 0 var(--s-1);
+    font-size: 11px;
+    letter-spacing: -0.01em;
+  }
+}
