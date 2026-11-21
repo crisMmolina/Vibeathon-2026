@@ -1,0 +1,23 @@
+{
+  "id": "eira-2026",
+  "nombre": "EIRA · Tamizaje Rosa y Salud que Florece 2026",
+  "regla_version": "map-1.0",
+  "periodo": { "desde": "2026-01-01", "hasta": "2026-09-30" },
+  "tipo_por_programa": { "tamizaje_rosa": "atencion", "salud_que_florece": "participacion" },
+  "id_columns": ["folio", "id", "registro", "no registro", "clave"],
+  "synonyms": {
+    "nombre": ["nombre", "nombres", "nombre s", "name", "primer nombre"],
+    "ap1": ["apellido paterno", "apellido 1", "primer apellido", "ap paterno", "paterno", "apellido"],
+    "ap2": ["apellido materno", "apellido 2", "segundo apellido", "ap materno", "materno"],
+    "fecha_nac": ["fecha nacimiento", "fecha de nacimiento", "f nacimiento", "nacimiento", "fecha nac", "birthdate"],
+    "tel": ["telefono", "tel", "celular", "telefono celular", "movil", "phone"],
+    "curp": ["curp"],
+    "estado": ["estado", "entidad", "entidad federativa", "edo", "state"],
+    "municipio": ["municipio", "mpio", "municipality", "alcaldia", "mun"],
+    "localidad": ["localidad", "comunidad", "colonia", "poblado", "loc"],
+    "cve_loc_inegi": ["cve loc", "clave localidad", "cve localidad inegi"],
+    "fecha_servicio": ["fecha atencion", "fecha de atencion", "fecha taller", "fecha servicio", "fecha", "fecha jornada"],
+    "servicio": ["servicio", "taller", "estudio", "tipo de servicio", "actividad"],
+    "ignorar": ["jornada", "observaciones", "notas"]
+  }
+}
