@@ -2,6 +2,7 @@
 # ledger: epoch, command, task, exit, code, ms, agent, harness (exit - = ended in an exec; #sum rows = older lines, counted)
 # ledger: epoch, command, task, exit, code, ms, agent, harness (exit - = ended in an exec; #sum rows = older lines, counted)
 # ledger: epoch, command, task, exit, code, ms, agent, harness (exit - = ended in an exec; #sum rows = older lines, counted)
+# ledger: epoch, command, task, exit, code, ms, agent, harness (exit - = ended in an exec; #sum rows = older lines, counted)
 1795282304	start	-	-	-	-	-	other
 1795282304	clock	-	-	-	-	-	other
 1795282304	start	-	-	-	-	-	other
@@ -29,3 +30,25 @@
 1795284218	done	HR-001	2	error	0	crismmolina-1	claude-code
 1795284236	design	-	-	-	-	-	other
 1795284236	bb	-	-	-	-	crismmolina-1	claude-code
+1795284238	done	HR-001	0	-	5000	crismmolina-1	claude-code
+1795284246	claim	HR-002	0	-	3000	crismmolina-2	other
+1795284249	inbox	-	0	-	2000	crismmolina-2	other
+1795284259	inbox	-	0	-	5000	crismmolina-2	other
+1795284906	design	-	-	-	-	crismmolina-2	other
+1795284295	review	HR-001	0	-	4000	crismmolina-2	other
+1795284363	status	HR-002	0	-	3000	crismmolina-2	claude-code
+1795284422	status	HR-001	0	-	3000	crismmolina-2	other
+1795284455	plan	-	3	conflict	3000	crisMmolina	other
+1795284464	review	HR-001	0	-	5000	crismmolina-2	other
+1795284475	wait	HR-001	0	-	52000	crismmolina-1	claude-code
+1795284479	msg	-	0	-	4000	crismmolina-1	claude-code
+1795284483	done	HR-001	0	-	5000	crismmolina-1	claude-code
+1795284519	merge	HR-001	3	-	3000	crismmolina-1	other
+1795284529	msg	-	0	-	4000	crismmolina-1	claude-code
+1795284554	status	HR-001	0	-	2000	-	claude-code
+1795284906	design	-	-	-	-	crismmolina-2	other
+1795284647	status	HR-001	0	-	2000	-	claude-code
+1795284906	design	-	-	-	-	crismmolina-2	other
+1795284906	design	-	-	-	-	crismmolina-2	other
+1795284906	design	-	-	-	-	crismmolina-2	other
+1795284906	bb	-	-	-	-	crismmolina-2	other
