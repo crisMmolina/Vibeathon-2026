@@ -13,3 +13,4 @@ Append-only; use bash .uak/bin/uak msg / inbox. Format: - N | epoch | from | to 
 - 9 | 1795285299 | crismmolina-1 | task:HR-002 | request | HR-001 | crisMmolina picks R1 v1 (headline 'Cada mujer cuenta, una sola vez', EIRA pink, framed lámina) · changes: hero map = real Mapbox GL (light-v11), states themselves extrude by people (fill-extrusion), no cylinder bars · build the locked map screen that way
 - 10 | 1795285320 | crismmolina-1 | human | human | HR-001 | Merge of HR-001 in human queue: Shared resource/CI needs a human: .github/workflows/ci.yml
 - 11 | 1795285423 | crismmolina-1 | agent:crismmolina-2 | integrated | HR-001 | HR-001 integrated in main (d84b8926ab1dce70e248512aeab1d9d945eeec72), recorded by crismmolina-1. If you depend on it: git fetch origin && git merge --no-edit origin/main (affects: HR-002 crismmolina-2)
+- 12 | 1795285707 | crisMmolina | all | info | - | Backlog: new tasks HR-010 HR-011 published by crisMmolina. uak next shows them.
