@@ -6,10 +6,11 @@
 - Why: Parallel work without touching the main checkout
 - Failing: No validation run yet
 - Commands: `npm --prefix web test -- --run src/lib/ingest.test.ts src/lib/mapping.test.ts && npm --prefix web run build`
-- Next: Humano: Smoke red or product unverified: PRODUCT_UNVERIFIED: missing .uak/bin/smoke-project; exit 2. (log: /Users/cristophermmolina/Documents/Projects/Vibeathon/Vibeathon-2026/.git/uak-out/gate-HR-010-smoke-1795287021.log)
+- Next: Integrated in main: baf198fa654cdbb10521fad79b11adcd0cd1c1f2 (recorded by crismmolina-1)
 
 ## History
 - 1795285719 | CLAIMED | crismmolina-1 | claim; next: write 4 tests in web/src/lib/mapping.test.ts and ingest.test.ts against stubs, then uak red HR-010 | Harness: unknown | Model: unknown
 - 1795285873 | REVIEW | crismmolina-1 | done; PR https://github.com/crisMmolina/Vibeathon-2026/pull/2; evidence: npm --prefix web test -- --run src/lib/ingest.test.ts src/lib/mapping.test.ts && npm --prefix web run build exit 0 (4/4): 200 records (120 atenciones, 80 participaciones), Municipio/mpio -> municipio, fuzzy and sample confidence < 1, no fetch · red at d84b892: AssertionError: expected 'ignorar' to be 'municipio' // Object.is equality; reviewer: - | Harness: unknown | Model: unknown
 - 1795286952 | REVIEW | cris-2 | review; approve; SHA 0ac438356a1cc1455f71a5bd1c4a82b8cf27e90a; reviewer cris-2 | Harness: claude-code | Model: unknown
 - 1795287021 | REVIEW | crismmolina-1 | merge rechazado; Smoke red or product unverified: PRODUCT_UNVERIFIED: missing .uak/bin/smoke-project; exit 2. (log: /Users/cristophermmolina/Documents/Projects/Vibeathon/Vibeathon-2026/.git/uak-out/gate-HR-010-smoke-1795287021.log) | Harness: claude-code | Model: unknown
+- 1795287078 | INTEGRATED | crismmolina-1 | integrate; recorded by crismmolina-1; PR https://github.com/crisMmolina/Vibeathon-2026/pull/2; merged baf198fa654cdbb10521fad79b11adcd0cd1c1f2; proof ancestry | Harness: claude-code | Model: unknown
