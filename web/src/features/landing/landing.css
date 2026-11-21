@@ -1,0 +1,250 @@
+/* Landing · direction "Lámina" (web/DESIGN.md). Tokens only; the screens shown are real captures in /landing/. */
+.ld {
+  color: var(--text);
+  background: var(--bg);
+}
+.ld section {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: var(--s-16) var(--s-12);
+}
+.ld h2 {
+  font-size: var(--t-28);
+  max-width: 22ch;
+}
+.ld-lead {
+  font-size: 18px;
+  color: var(--text-2);
+  max-width: 46ch;
+}
+.ld-hero {
+  display: grid;
+  grid-template-columns: minmax(320px, 5fr) 8fr;
+  gap: var(--s-12);
+  align-items: center;
+  min-height: calc(100dvh - var(--nav-h));
+  padding-top: var(--s-8) !important;
+  padding-bottom: var(--s-8) !important;
+}
+.ld-hero h1 {
+  font-size: clamp(40px, 4.6vw, 72px);
+  line-height: 1.02;
+}
+.ld-hero h1 span {
+  display: block;
+  color: var(--rose-deep);
+}
+.ld-hero-text {
+  display: grid;
+  gap: var(--s-6);
+  justify-items: start;
+}
+.ld-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-3);
+}
+.ld-stage {
+  position: relative;
+  aspect-ratio: 2560 / 1150;
+  overflow: hidden;
+  background: var(--surface-2);
+}
+.ld-stage img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: left bottom;
+}
+.ld-stage img + img {
+  animation: ld-swap 12s infinite;
+}
+@keyframes ld-swap {
+  0%,
+  42% {
+    opacity: 0;
+  }
+  50%,
+  92% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.ld-pain {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--s-12);
+  align-items: center;
+  border-top: 1.5px solid var(--frame);
+  border-bottom: 1.5px solid var(--frame);
+}
+.ld-pain strong {
+  font-family: var(--font-display);
+  font-size: clamp(56px, 7vw, 96px);
+  line-height: 1;
+  color: var(--rose-deep);
+}
+.ld-steps {
+  display: grid;
+  gap: var(--s-16);
+  margin-top: var(--s-12);
+}
+.ld-step {
+  display: grid;
+  grid-template-columns: 4fr 7fr;
+  gap: var(--s-12);
+  align-items: center;
+}
+.ld-step:nth-child(even) > div:first-child {
+  order: 2;
+}
+.ld-step h3 {
+  font-size: var(--t-20);
+  margin-bottom: var(--s-2);
+}
+.ld-step-n {
+  font-family: var(--font-display);
+  font-size: var(--t-48);
+  line-height: 1;
+  color: var(--rose);
+}
+.ld-shot {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.ld-proof {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--s-12);
+  align-items: start;
+}
+.ld-sum {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--s-4);
+  font-family: var(--font-display);
+  font-size: var(--t-48);
+  line-height: 1.1;
+}
+.ld-sum s {
+  color: var(--text-2);
+}
+.ld-who {
+  list-style: none;
+  margin: var(--s-8) 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1.5px solid var(--frame);
+}
+.ld-who li {
+  padding: var(--s-6) var(--s-6) var(--s-6) 0;
+}
+.ld-who li + li {
+  padding-left: var(--s-6);
+  border-left: 1px solid var(--line);
+}
+.ld-who strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: var(--t-20);
+}
+.ld-ask {
+  display: grid;
+  justify-items: start;
+  gap: var(--s-6);
+  background: var(--surface-2);
+  max-width: none !important;
+}
+.ld-ask > * {
+  margin-left: max(0px, calc((100vw - 1440px) / 2));
+}
+.ld footer {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: var(--s-8) var(--s-12) var(--s-16);
+  font-size: var(--t-14);
+  color: var(--text-2);
+  display: grid;
+  gap: var(--s-1);
+}
+@media (max-width: 860px) {
+  .ld section {
+    padding: var(--s-12) var(--s-4);
+  }
+  .ld-hero,
+  .ld-pain,
+  .ld-step,
+  .ld-proof {
+    grid-template-columns: 1fr;
+    gap: var(--s-6);
+  }
+  .ld-hero {
+    min-height: 0;
+  }
+  .ld-step:nth-child(even) > div:first-child {
+    order: 0;
+  }
+  .ld-stage {
+    aspect-ratio: 4 / 3;
+  }
+  .ld-sum {
+    font-size: var(--t-28);
+  }
+  .ld-who {
+    grid-template-columns: 1fr;
+  }
+  .ld-who li + li {
+    padding-left: 0;
+    border-left: 0;
+    border-top: 1px solid var(--line);
+  }
+  .ld footer {
+    padding: var(--s-6) var(--s-4) var(--s-16);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ld-stage img + img {
+    animation: none;
+    opacity: 0;
+  }
+}
+.ld a.ui-btn {
+  color: var(--text);
+}
+.ld-step:nth-child(even) {
+  grid-template-columns: 7fr 4fr;
+}
+.ld-shot[data-crop] {
+  aspect-ratio: 1824 / 690;
+  object-fit: cover;
+  object-position: top;
+}
+@media (max-width: 860px) {
+  .ld-step:nth-child(even) {
+    grid-template-columns: 1fr;
+  }
+}
+/* The hero is full-bleed: on a projector (1920) the stage grows instead of leaving gutters. */
+.ld section.ld-hero {
+  max-width: none;
+  grid-template-columns: minmax(320px, 4fr) 8fr;
+  padding-left: clamp(var(--s-12), 5vw, 120px);
+  padding-right: clamp(var(--s-12), 5vw, 120px);
+}
+.ld-hero h1 {
+  font-size: clamp(40px, 5vw, 96px);
+}
+@media (max-width: 860px) {
+  .ld section.ld-hero {
+    grid-template-columns: 1fr;
+    padding-left: var(--s-4);
+    padding-right: var(--s-4);
+  }
+}
