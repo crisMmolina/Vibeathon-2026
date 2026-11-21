@@ -1,7 +1,12 @@
 # ledger: epoch, command, task, exit, code, ms, agent, harness (exit - = ended in an exec; #sum rows = older lines, counted)
 # ledger: epoch, command, task, exit, code, ms, agent, harness (exit - = ended in an exec; #sum rows = older lines, counted)
+# ledger: epoch, command, task, exit, code, ms, agent, harness (exit - = ended in an exec; #sum rows = older lines, counted)
 1795282304	start	-	-	-	-	-	other
 1795282304	clock	-	-	-	-	-	other
 1795282304	start	-	-	-	-	-	other
 1795282304	hook-digest	-	0	-	3000	-	claude-code
 1795283118	clock	-	-	-	-	-	claude-code
+1795283301	register-reviewer	-	0	-	4000	crisMmolina	other
+1795283312	register-reviewer	-	0	-	2000	crisMmolina	other
+1795283780	graph	-	-	-	-	-	claude-code
+1795283381	lint	-	0	-	3000	-	claude-code
