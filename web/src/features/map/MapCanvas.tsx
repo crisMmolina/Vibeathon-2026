@@ -35,8 +35,7 @@ export default function MapCanvas({ counts, max, alliances, onSelectAlliance, on
     let gone = false
     ;(async () => {
       const geo: GeoJSON = await fetch(ESTADOS_GEOJSON_URL).then((r) => r.json())
-      for (const f of geo.features) { f.properties.n = 0; f.properties.t = 0; f.properties.h = 0 }
-      geoRef.current = geo
+            geoRef.current = geo
       const token = import.meta.env.VITE_MAPBOX_TOKEN as string | undefined
       const engine: Engine = pickEngine(token)
       const view = { container: box.current!, center: [-101.6, 21.6] as [number, number], zoom: 4.6, pitch: 50, bearing: -8, attributionControl: false }
@@ -56,14 +55,14 @@ export default function MapCanvas({ counts, max, alliances, onSelectAlliance, on
       mapRef.current = map
       onEngine(ENGINE_LABEL[engine])
       map.on('load', () => {
-        map.addSource('estados', { type: 'geojson', data: geo })
+        map.addSource('estados', { type: 'geojson', data: geo, promoteId: 'cve_ent' })
         map.addLayer({
           id: 'estados-3d',
           type: 'fill-extrusion',
           source: 'estados',
           paint: {
-            'fill-extrusion-color': ['interpolate', ['linear'], ['get', 't'], 0, cssVar('--bg'), 0.01, cssVar('--rose-pale'), 0.4, cssVar('--rose'), 0.75, cssVar('--rose-deep'), 1, cssVar('--accent')],
-            'fill-extrusion-height': ['get', 'h'],
+            'fill-extrusion-color': ['interpolate', ['linear'], ['coalesce', ['feature-state', 't'], 0], 0, cssVar('--bg'), 0.01, cssVar('--rose-pale'), 0.4, cssVar('--rose'), 0.75, cssVar('--rose-deep'), 1, cssVar('--accent')],
+            'fill-extrusion-height': ['coalesce', ['feature-state', 'h'], 0],
             'fill-extrusion-opacity': 0.94,
           },
         })
@@ -108,12 +107,9 @@ export default function MapCanvas({ counts, max, alliances, onSelectAlliance, on
         const q = Math.max(0, Math.min(1, (p - delay) / (1 - delay)))
         const e = 1 - Math.pow(1 - q, 3)
         const v = (from[cve] ?? 0) + (target - (from[cve] ?? 0)) * e
-        f.properties.n = v
-        f.properties.t = max > 0 ? v / max : 0
-        f.properties.h = max > 0 ? (v / max) * METERS_AT_MAX : 0
+        map.setFeatureState({ source: 'estados', id: cve }, { t: max > 0 ? v / max : 0, h: max > 0 ? (v / max) * METERS_AT_MAX : 0 })
         if (p === 1) shown.current[cve] = target
       }
-      map.getSource('estados')?.setData(geo)
       if (p < 1) raf = requestAnimationFrame(frame)
     }
     raf = requestAnimationFrame(frame)
