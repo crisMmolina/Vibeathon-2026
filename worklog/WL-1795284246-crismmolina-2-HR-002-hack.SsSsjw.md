@@ -6,7 +6,7 @@
 - Why: human pick
 - Failing: smoke exit 2: .uak/bin/smoke-project missing (repo-wide)
 - Commands: test -s web/DESIGN.md && ls web/public/design-lock/screens/*-1280.png && bash .uak/bin/uak lint && npm --prefix web run build
-- Next: Wait for review of SHA bd91fc3, then uak merge HR-002
+- Next: Integrated in main: 0c46dd502a95c2bc1ed9b9d57762fd588f40e50c (recorded by crismmolina-2)
 
 ## History
 - 1795284246 | CLAIMED | crismmolina-2 | claim; next: `/uak-design-lock` with IDEA.md §0 as the brief; if HR-001 is not merged yet, start with the static direction mockups | Harness: unknown | Model: unknown
@@ -15,3 +15,4 @@
 - 1795287539 | REVIEW | crismmolina-2 | pending decision HR-002-1795287539; option: Direction R1 v1 Lamina; Why: human pick relayed by crismmolina-1 msg #9; hero map real Mapbox light-v11 with extruded states | Harness: unknown | Model: unknown
 - 1795287541 | REVIEW | crismmolina-2 | checkpoint; next: Wait for review of SHA bd91fc3, then uak merge HR-002 | Harness: unknown | Model: unknown
 - 1795287685 | REVIEW | crismmolina-1 | review; approve; SHA bd91fc3b60cc4ac498c0959874545fb2b5ff9484; reviewer crismmolina-1 | Harness: unknown | Model: unknown
+- 1795288129 | INTEGRATED | crismmolina-2 | integrate; recorded by crismmolina-2; PR https://github.com/crisMmolina/Vibeathon-2026/pull/5; merged 0c46dd502a95c2bc1ed9b9d57762fd588f40e50c; proof ancestry | Harness: claude-code | Model: unknown
