@@ -6,6 +6,7 @@
 # ledger: epoch, command, task, exit, code, ms, agent, harness (exit - = ended in an exec; #sum rows = older lines, counted)
 # ledger: epoch, command, task, exit, code, ms, agent, harness (exit - = ended in an exec; #sum rows = older lines, counted)
 # ledger: epoch, command, task, exit, code, ms, agent, harness (exit - = ended in an exec; #sum rows = older lines, counted)
+# ledger: epoch, command, task, exit, code, ms, agent, harness (exit - = ended in an exec; #sum rows = older lines, counted)
 1795282304	start	-	-	-	-	-	other
 1795282304	clock	-	-	-	-	-	other
 1795282304	start	-	-	-	-	-	other
@@ -98,3 +99,18 @@
 1795286336	status	-	0	-	3000	cris-4	claude-code
 1795286839	cli	-	2	unknown-command	0	-	claude-code
 1795286608	status	-	0	-	1000	-	claude-code
+1795286839	hook-digest	-	0	-	1000	-	claude-code
+1795286843	review	HR-010	0	-	3000	cris-2	claude-code
+1795286846	status	HR-010	0	-	1000	cris-2	claude-code
+1795286847	review	HR-011	0	-	3000	cris-2	claude-code
+1795286850	status	HR-011	0	-	1000	cris-2	claude-code
+1795286851	review	HR-012	0	-	3000	cris-2	claude-code
+1795286854	status	HR-012	0	-	2000	cris-2	claude-code
+1795286952	review	HR-010	0	-	3000	cris-2	claude-code
+1795286955	review	HR-011	0	-	3000	cris-2	claude-code
+1795286958	review	HR-012	0	-	3000	cris-2	claude-code
+1795286977	status	HR-010	0	-	2000	-	claude-code
+1795286979	status	HR-011	0	-	1000	-	claude-code
+1795286980	status	HR-012	0	-	1000	-	claude-code
+1795287021	merge	HR-010	0	-	13000	crismmolina-1	other
+1795287037	bb	-	-	-	-	crismmolina-1	claude-code
