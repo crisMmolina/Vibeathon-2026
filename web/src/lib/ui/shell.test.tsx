@@ -4,6 +4,8 @@ import App from '../../App.tsx'
 vi.mock('../../features/map/index.tsx', () => ({ default: () => null }))
 
 describe('shell (HR-013)', () => {
+  // Since HR-015 the bare URL opens the landing; these tests cover the app opened on a step.
+  beforeEach(() => window.history.replaceState({}, '', '/?tab=carga'))
   it('moves_to_the_tab_named_by_a_huella_tab_event', () => {
     render(<App />)
     expect(screen.getByRole('button', { name: /Carga/ })).toHaveAttribute('aria-current', 'page')
@@ -16,5 +18,23 @@ describe('shell (HR-013)', () => {
     render(<App />)
     act(() => void window.dispatchEvent(new CustomEvent('huella:tab', { detail: 'no-existe' })))
     expect(screen.getByRole('button', { name: /Carga/ })).toHaveAttribute('aria-current', 'page')
+  })
+})
+
+describe('shell home (HR-015)', () => {
+  beforeEach(() => window.history.replaceState({}, '', '/'))
+  it('opens_on_the_landing_with_no_tab_highlighted', () => {
+    const { container } = render(<App />)
+    expect(container.querySelector('[data-feature="landing"]')).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: /Carga/ })).not.toHaveAttribute('aria-current')
+  })
+
+  it('leaves_the_landing_on_a_huella_tab_event_and_returns_with_the_brand', () => {
+    const { container } = render(<App />)
+    act(() => void window.dispatchEvent(new CustomEvent('huella:tab', { detail: 'carga' })))
+    expect(container.querySelector('[data-feature="landing"]')).not.toBeInTheDocument()
+    expect(screen.getByRole('button', { name: /Carga/ })).toHaveAttribute('aria-current', 'page')
+    act(() => screen.getByRole('link', { name: /inicio/ }).click())
+    expect(container.querySelector('[data-feature="landing"]')).toBeInTheDocument()
   })
 })

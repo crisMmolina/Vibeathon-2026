@@ -31,10 +31,10 @@ export interface NavItem {
   label: string
 }
 
-export function NavBar({ items, current, onSelect, end }: { items: NavItem[]; current: string; onSelect: (id: string) => void; end?: ReactNode }) {
+export function NavBar({ items, current, onSelect, onHome, end }: { items: NavItem[]; current: string; onSelect: (id: string) => void; onHome?: () => void; end?: ReactNode }) {
   return (
     <header className="ui-nav">
-      <a className="ui-brand" href="/" aria-label="EIRA · Huella Rosa, inicio">
+      <a className="ui-brand" href="/" aria-label="EIRA · Huella Rosa, inicio" onClick={onHome && ((e) => (e.preventDefault(), onHome()))}>
         <EiraLogo />
         <span className="ui-brand-name">Huella Rosa</span>
       </a>
