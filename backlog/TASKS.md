@@ -139,3 +139,15 @@ Append-only; added to .uak/TASKS.md from main. Why: adding tasks never waits for
 - **Acceptance:**
   - Shell listens to huella:tab so a screen can move to the next step (Carga → Mapa)
 - **Verify:** `test -s web/DESIGN.md && ls web/public/design-lock/screens/*-1280.png && bash .uak/bin/uak lint`
+
+## HR-014 · Bottom nav at 390: the 6 tabs must fit (last tab Informe is clipped) (follow-up of HR-002)
+
+- **Type:** follow-up
+- **Priority:** P1
+- **Depends on:** HR-002
+- **Follow-up of:** HR-002
+- **Paths:** web/DESIGN.md, web/src/index.css, web/src/lib/ui/, web/src/App.tsx, web/public/design-lock/, web/public/brand/
+- **Freeze-Allowed:** no
+- **Acceptance:**
+  - Bottom nav at 390: the 6 tabs must fit (last tab Informe is clipped)
+- **Verify:** `test -s web/DESIGN.md && ls web/public/design-lock/screens/*-1280.png && bash .uak/bin/uak lint`
